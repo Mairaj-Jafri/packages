@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Abroad Consultation Packages</title>
+    <style>
+        /* Banner Styles */
+        .banner {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .banner h1 {
+            font-size: 2.5em;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+        
+        .banner p {
+            font-size: 1.2em;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Package Container */
+        .packages-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Package Card */
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Package Headers */
+        .basic {
+            border-top: 5px solid #4CAF50;
+        }
+
+        .standard {
+            border-top: 5px solid #2196F3;
+        }
+
+        .premium {
+            border-top: 5px solid #9C27B0;
+        }
+
+        .package-card h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .price {
+            font-size: 2em;
+            color: #2c3e50;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .features li {
+            padding: 8px 0;
+            color: #666;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #4CAF50;
+            margin-right: 8px;
+        }
+
+        .select-button {
+            background-color: #2a5298;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .select-button:hover {
+            background-color: #1e3c72;
+        }
+
+        /* Most Popular Badge */
+        .popular-badge {
+            background-color: #FF4081;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 0.9em;
+        }
+
+        .package-card.standard {
+            position: relative;
+            border: 2px solid #2196F3;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .packages-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .package-card {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner Section -->
+    <div class="banner">
+        <h1>Your Gateway to Global Education</h1>
+        <p>Expert guidance for your international academic journey</p>
+    </div>
+
+    <!-- Packages Section -->
+    <div class="packages-container">
+        <!-- Basic Package -->
+        <div class="package-card basic">
+            <h2>Basic Package</h2>
+            <div class="price">$299</div>
+            <ul class="features">
+                <li>Initial Consultation (1 hour)</li>
+                <li>University Shortlisting (3 universities)</li>
+                <li>Basic Document Review</li>
+                <li>Email Support</li>
+                <li>Basic Application Guide</li>
+                <li>1 SOP Review</li>
+                <li>Basic Visa Guide</li>
+            </ul>
+            <button class="select-button" onclick="selectPackage('Basic')">Select Basic</button>
+        </div>
+
+        <!-- Standard Package -->
+        <div class="package-card standard">
+            <div class="popular-badge">Most Popular</div>
+            <h2>Standard Package</h2>
+            <div class="price">$599</div>
+            <ul class="features">
+                <li>Everything in Basic, plus:</li>
+                <li>Extended Consultation (2 hours)</li>
+                <li>University Shortlisting (5 universities)</li>
+                <li>Comprehensive Document Review</li>
+                <li>Priority Email & Phone Support</li>
+                <li>2 SOP Reviews</li>
+                <li>Scholarship Application Support</li>
+                <li>Detailed Visa Application Guide</li>
+                <li>Interview Preparation</li>
+            </ul>
+            <button class="select-button" onclick="selectPackage('Standard')">Select Standard</button>
+        </div>
+
+        <!-- Premium Package -->
+        <div class="package-card premium">
+            <h2>Premium Package</h2>
+            <div class="price">$999</div>
+            <ul class="features">
+                <li>Everything in Standard, plus:</li>
+                <li>Unlimited Consultation Hours</li>
+                <li>University Shortlisting (8 universities)</li>
+                <li>Complete Application Management</li>
+                <li>24/7 Priority Support</li>
+                <li>Unlimited SOP Reviews</li>
+                <li>Research Proposal Development</li>
+                <li>Scholarship Strategy Session</li>
+                <li>Complete Visa Application Support</li>
+                <li>Mock Interviews</li>
+                <li>Post-Admission Support</li>
+            </ul>
+            <button class="select-button" onclick="selectPackage('Premium')">Select Premium</button>
+        </div>
+    </div>
+
+    <script>
+        function selectPackage(packageType) {
+            // Store the selected package in localStorage
+            localStorage.setItem('selectedPackage', packageType);
+            
+            // Redirect to the registration form
+            window.location.href = 'registration.html';
+        }
+    </script>
+</body>
+</html>
